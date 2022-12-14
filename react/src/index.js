@@ -8,10 +8,13 @@ import { reducer } from './reducers/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import "bootstrap/dist/css/bootstrap.min.css"
 import {injectStoreToServer} from "./actions/server";
-import createSagaMiddleWare from 'redux-saga'
 import { rootSaga } from './sagas/rootSaga';
+import {createEpicMiddleware} from "redux-observable";
+import {fetchDataEpic, rootEpic} from "./components/Epics/rootEpic";
+import createSagaMiddleware from "redux-saga";
 
-const sagaMiddleWare = createSagaMiddleWare()
+// const epicMiddleWare = createEpicMiddleware()
+const sagaMiddleWare = createSagaMiddleware()
 
 const store = createStore(reducer,
     composeWithDevTools(applyMiddleware(sagaMiddleWare)))

@@ -6,7 +6,7 @@ function Books() {
   const dispatch = useDispatch()
 
   return (
-    <ul className="list-group books-list">
+    <ul className="list-group books-list" data-cy="booksList">
       {books.map((book,idx) =>
         <li key={idx} className="list-group-item d-flex justify-content-between align-items-center">
           <span><strong>{book.title}</strong> by {book.author}</span>

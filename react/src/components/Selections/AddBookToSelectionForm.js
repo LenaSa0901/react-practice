@@ -36,7 +36,7 @@ function AddBookToSelectionForm() {
           <select className="form-select" id="selectionSelect"
                   onChange={e=>setSelectionId(e.target.value)}>
             <option value="">Choose a selection</option>
-            { selections.data && selections.data.map((el, i) =>
+            { selections && selections.data.map((el, i) =>
                 <option key={i} value={el._id}>{el.title} by {el.author}</option>)}
           </select>
         </div>
